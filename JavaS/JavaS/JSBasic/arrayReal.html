@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<ul id="userList">
+		
+	</ul>
+
+	<script type="text/javascript">
+		var users = [
+			{name: 'Andrew', age : 20, gender: 'Other'},
+			{name: 'Hito', age : 19, gender: 'Other'},
+			{name: 'Sengo', age : 43, gender: 'Male'},
+			{name: 'Hawk', age : 21, gender: 'Female'},
+			{name: 'BaoBanh', age : 14, gender: 'Male'},
+		];
+
+		var ulName = document.getElementById('userList');
+
+		getName(ulName, users);
+
+		function getName (container, items) {
+			var childItems = items.map(item => item.name);
+
+			console.log(childItems);
+			for(var n of childItems){
+				var para = document.createElement('li');
+				var paraText = document.createTextNode(n);
+				para.appendChild(paraText);
+				container.appendChild(para);
+			}
+		}
+	</script>
+</body>
+</html>

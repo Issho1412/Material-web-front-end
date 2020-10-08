@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		function checkPrimen(n) {
+			// body...
+			var i = 2;
+			var count = 0;
+			if(n < 2)
+			{
+				document.writeln(n + ' is not prime number <br>');
+			}
+			else
+			{
+
+
+				for(i = 1; i <= n; i++)
+				{
+					if(n%i == 0){
+						count++;
+					}
+
+				}
+				if(count == 2)
+				{
+					document.writeln(n + ' is a prime number. <br>');
+				}
+				else{
+					document.writeln(n + " isn't a prime number. <br>");
+				}
+			}
+
+		}
+		checkPrimen(-3);
+		checkPrimen(3);
+		checkPrimen(12);
+	</script>
+</body>
+</html>

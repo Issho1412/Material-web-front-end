@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+	// su dung map() thi se bien doi cac phan tu va tao ra 1 mang gia tri moi
+	var arrNum = [1, 3, 5, 7, 9];
+	var result = arrNum.map(x => x*2);
+
+
+	document.write("Don't Use map function: ");
+	for(let i of arrNum){
+		document.write(i );
+	}
+
+	document.write("<br>");
+	document.write("Use map function: ");
+	for(let i of result){
+		document.write(i );
+	}
+
+	document.write("<br>");
+	var rectangle = [
+		{width: 4, height: 10},
+		{width: 14, height: 9},
+		{width: 12, height: 23}
+	];
+
+	document.write("<br>");
+	document.write("[] Rec before: ");
+	for(let j of rectangle){
+		document.write(j.width + " ");
+	}
+
+	var res = rectangle.map(x => x.height + x.width);
+
+	document.write("<br>");
+	document.write("[] Rec after: ");
+	for(let h of res){
+		document.write(h + " ");
+	}
+
+	document.write("<br>");
+	document.write("<br>");
+	
+	// use filter() se tra ve 1 so gia tri ko nhu ben dau vs dk fu hop trong ham
+	// ham find() cu phap giong nhu filter nhu se tra ve gia tri dau tien thoa dk
+	let mix = [12, 0, 33, 11, 93, 234]
+	document.write("[] Filter before: ");
+	for(let k of mix){
+		document.write(k + " ");
+	}
+
+	var nmix = mix.filter(item => item%2 === 0);
+
+	document.write("<br>");
+	document.write("[] Filter after: ");
+	for(let q of nmix){
+		document.write(q + " ");
+	}
+
+	document.write("<br>");
+	document.write("<br>");
+
+	let nre = [
+		{name: 'A', price: 100, Id: '1', quantity: '2'},
+		{name: 'B', price: 880, Id: '2', quantity: '44'},
+		{name: 'C', price: 120, Id: '3', quantity: '12'},
+		{name: 'D', price: 900, Id: '4', quantity: '4'},
+	];
+	document.write("[] Reduce before: ");
+	for(let g of nre){
+		document.write("Name: "+ g.name + " Price: " + g.price + " Id: " + g.Id + " Quantity: " + g.quantity);
+		document.write("<br>");
+	}
+
+	document.write("<br>");
+	document.write("<br>");
+	var mnre = nre.reduce(function (a, b) {
+		console.log(a, b);
+		return a + b.price;
+	}, 0);
+	// 0 = init;
+
+	
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		var mouse = {
+			weight : 0.4,
+			getWeight : () => this.weight
+		};
+
+		function Mouse (color, weight) {
+			this.weight = weight;
+			this.color = color;
+			this.type = 'mouse';
+		}
+
+		Mouse.prototype.sleep = ()=> console.log('Sleeping Zzz...');
+
+
+		var jerry = new Mouse('orange', 20);
+		jerry.sleep();
+		console.log(jerry);
+
+		var mickey = new Mouse('black', 10);
+		mickey.sleep();
+		console.log(mickey);
+
+		// Khi chung ta su dung prototype chung ta se tiet kiem duoc bo nho hon vi chi luu 1 lan r tai su dung
+		// Nhung khi ta su dung this.sleep = ()=>console.log('??'); thi co nghia la
+		// Chung se duoc chia se voi nhau boi cung 1 prototype.
+
+		// function sleep dc khoi tao moi lan tao 1 doi tuong vi ko cung tro den 1 doi tuong
+		// Dan den lang phi bo nho.
+		// Doi tuong moi khac nhau du cung cho ra 1 ket qua. Chiem 1 phan bo nho moi lan\
+		// khoi tao.
+		console.log('Compare jerry.sleep() === mickey.sleep()');
+		console.log(jerry.sleep() === mickey.sleep());
+	</script>
+</body>
+</html>
